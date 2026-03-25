@@ -46,18 +46,11 @@ const roleJs = document.getElementById('role') // form
 const emailJs = document.getElementById('email') // form
 const imageJs = document.getElementById('image') // form
 
+// FUNZIONI
+function createCard(name, role, email, img){
+    const string = `
 
-// sezione FOR - cicliamo l'array teamMembers
-let cardString = '' // da concatenare
-
-for (let i = 0; i < teamMembers.length; i++){
-
-  const member = teamMembers[i] // objects {}
-  const {name, role, email, img} = member
-
-  const string = `
-
-   <div class="col-md-4 bg-dark p-3 m-3 align-items d-flex" id="card">
+    <div class="col-md-4 bg-dark p-3 m-3 align-items d-flex" id="card">
 
       <!-- immagine -->
       <div class="col-4" id="img">
@@ -73,11 +66,23 @@ for (let i = 0; i < teamMembers.length; i++){
          <div class="text-white fw-light small" id="role">${role}</div>
          <!-- email -->
          <div class="link-info" id="email">${email}</div>
-       </div>
-    </div>
+      </div>
 
+    </div>
   `
-  cardString += string
+  return string
+}
+
+
+// sezione FOR - cicliamo l'array teamMembers
+let cardString = '' // da concatenare
+
+for (let i = 0; i < teamMembers.length; i++){
+
+  const member = teamMembers[i] // objects {}
+  const {name, role, email, img} = member
+
+  cardString += createCard(name, role, email, img)
 }
 
 // console.log(cardString);
