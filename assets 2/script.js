@@ -40,6 +40,11 @@ const teamMembers = [
 
 // sezione DOM - selezione nodi del dom 
 const cardsJs = document.getElementById('cards')
+const formJs = document.getElementById('form') // form
+const nameJs = document.getElementById('name') // form
+const roleJs = document.getElementById('role') // form
+const emailJs = document.getElementById('email') // form
+const imageJs = document.getElementById('image') // form
 
 
 // sezione FOR - cicliamo l'array teamMembers
@@ -77,5 +82,25 @@ for (let i = 0; i < teamMembers.length; i++){
 
 // console.log(cardString);
 cardsJs.innerHTML = cardString
+
+formJs.addEventListener('submit', function(e){
+  e.defaultPrevented()
+
+  let name = nameJs.value 
+  let role = roleJs.value
+  let email = emailJs.value
+  let img = imageJs.value
+
+  // creiamo un nuovo oggetto 
+  let newMember = {
+    name, // name: nameJs.value
+    role, // role: roleJs.value
+    email, // email: emailJs.value
+    img // img: imageJs. value
+  }
+  // pushiamo il nuovo oggetto nell'array di partenza (teamMembers)
+  teamMembers.unshift(newMember)
+
+})
 
 
