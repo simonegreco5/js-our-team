@@ -72,7 +72,20 @@ function createCard(name, role, email, img){
   `
   return string
 }
+function addCardInList(arrayMember, listJs){
+  let cardString = '' // da concatenare
 
+  for (let i = 0; i < arrayMember.length; i++){
+
+    const member = arrayMember[i] // objects {}
+    const {name, role, email, img} = member
+
+    cardString += createCard(name, role, email, img)
+ }
+
+// console.log(cardString);
+listJs.innerHTML = cardString
+}
 
 // sezione FOR - cicliamo l'array teamMembers
 let cardString = '' // da concatenare
@@ -84,13 +97,18 @@ for (let i = 0; i < teamMembers.length; i++){
 
   cardString += createCard(name, role, email, img)
 }
-
 // console.log(cardString);
 cardsJs.innerHTML = cardString
+// fine sezione FOR
+
+// oppure usiamo la funzione addCardInList - invece che la sezione FOR sopra 
+// addCardInList(teamMembers, cardsJs)
+
 
 formJs.addEventListener('submit', function(e){
-  e.defaultPrevented()
+  e.preventDefault()
 
+  console.log('sono dentro event listeners')
   let name = nameJs.value 
   let role = roleJs.value
   let email = emailJs.value
@@ -105,6 +123,9 @@ formJs.addEventListener('submit', function(e){
   }
   // pushiamo il nuovo oggetto nell'array di partenza (teamMembers)
   teamMembers.unshift(newMember)
+
+  // aggiungiamo la nuova card in lista
+  addCardInList(teamMembers, cardsJs)
 
 })
 
