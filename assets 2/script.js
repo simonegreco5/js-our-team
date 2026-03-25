@@ -50,22 +50,18 @@ const imageJs = document.getElementById('image') // form
 function createCard(name, role, email, img){
     const string = `
 
-    <div class="col-md-4 bg-dark p-3 m-3 align-items d-flex" id="card">
+    <div class="col-6 col-md-4" id="card">
 
-      <!-- immagine -->
-      <div class="col-4" id="img">
-        <img style="width: 100%" src="./assets 2/${img}" alt="${name}">
-      </div>
+      <div class="d-flex bg-dark p-3">
+        <div class="col-4" id="img">
+          <img style="width: 100%" src="./assets 2/${img}" alt="${name}">
+        </div>
 
-      <div class="col-8 w-100 ms-3">
-         <!-- nome -->
-         <div class="text-white text-uppercase" id="name">
-           <strong>${name}</strong>
-         </div>
-         <!-- ruolo -->
-         <div class="text-white fw-light small" id="role">${role}</div>
-         <!-- email -->
-         <div class="link-info" id="email">${email}</div>
+        <div class="col-8 ms-2">
+           <div class="text-white text-uppercase" id="name"><strong>${name}</strong></div>
+           <div class="text-white fw-light small" id="role">${role}</div>
+           <div class="link-info" id="email">${email}</div>
+        </div>
       </div>
 
     </div>
