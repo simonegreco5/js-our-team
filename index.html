@@ -10,12 +10,11 @@
 </head>
 
 
-<body>
-    <div class="container bg-primary-subtle">
+<body class="bg-success-subtle">
+    <div class="container bg-white">
 
-        <!--- sezione 1 / titolo + lorem --->
+        <!-- TITOLO + LOREM -->
         <section class="p-4 text-center">
-
             <h1 class="mb-5 text-primary">
                 <strong>Meet our Team</strong>
             </h1>
@@ -26,55 +25,43 @@
                 amet consectetur vitae sapiente consequatur nulla aut
                 vel deleniti veritatis.
             </div>
-
         </section>
-        <!-- / --- --- --- --- --- --- / -->
 
-        <!-- -- sezione 2 / card team -- -->
+        <!-- CARD TEAM -->
         <section>
             <div class="row" id="cards">
-
-                <div class="col bg-dark" id="card">
-                    <!-- immagine -->
-                    <div class="" id="img">
-                        <img src="" alt="">
-                    </div>
-
-                    <!-- nome -->
-                    <div class="" id="name">
-                        <strong> </strong>
-                    </div>
-
-                    <!-- ruolo -->
-                    <div class="" id="role">
-
-                    </div>
-
-                    <!-- email -->
-                    <div class="" id="email">
-
-                    </div>
-                </div>
-
+                <!-- add card with JavaScript -->
             </div>
         </section>
 
+        <!-- FORM -->
+        <form class="row g-3 mt-5 bg-dark p-2" id="form">
+           <div class="col-md-6">
+             <label for="name" class="form-label text-white">Name</label>
+             <input type="text" class="form-control" id="name" placeholder="your name">
+           </div>
+           <div class="col-md-6">
+             <label for="role" class="form-label text-white">Role</label>
+             <input type="text" class="form-control" id="role" placeholder="your role">
+           </div>
+           <div class="col-md-6">
+             <label for="inputEmail4" class="form-label text-white">Email</label>
+             <input type="email" class="form-control" id="inputEmail4" placeholder="example@email.com">
+           </div>
+           <div class="col-md-6">
+             <label for="image" class="form-label text-white">Image</label>
+             <input type="text" class="form-control" id="image" placeholder="get your image">
+           </div>
 
-
+           <div class="col-12">
+             <button type="submit" class="btn btn-primary">add</button>
+           </div>
+        </form>
         
-        
-
-
 
 
 
     </div>
-
-
-
-
-
-
     <!-- Sezione JavaScript -->
     <script src="./assets 2/script.js"></script>
 </body>

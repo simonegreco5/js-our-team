@@ -41,9 +41,10 @@ const teamMembers = [
 // sezione DOM - selezione nodi del dom 
 const cardsJs = document.getElementById('cards')
 
-let cardString = ''
 
 // sezione FOR - cicliamo l'array teamMembers
+let cardString = '' // da concatenare
+
 for (let i = 0; i < teamMembers.length; i++){
 
   const member = teamMembers[i] // objects {}
@@ -51,26 +52,30 @@ for (let i = 0; i < teamMembers.length; i++){
 
   const string = `
 
-   <div class="col bg-dark" id="card">
+   <div class="col-md-4 bg-dark p-3 m-3 align-items d-flex" id="card">
+
       <!-- immagine -->
-      <div class="" id="img">
-        <img src="${img}" alt="${name}">
+      <div class="col-4" id="img">
+        <img style="width: 100%" src="./assets 2/${img}" alt="${name}">
       </div>
 
-      <!-- nome -->
-      <div class="" id="name">
-        <strong>${name}</strong>
-      </div>
-
-      <!-- ruolo -->
-      <div class="" id="role">${role}</div>
-
-      <!-- email -->
-      <div class="" id="email">${email}</div>
+      <div class="col-8 w-100 ms-3">
+         <!-- nome -->
+         <div class="text-white text-uppercase" id="name">
+           <strong>${name}</strong>
+         </div>
+         <!-- ruolo -->
+         <div class="text-white fw-light small" id="role">${role}</div>
+         <!-- email -->
+         <div class="link-info" id="email">${email}</div>
+       </div>
     </div>
 
   `
   cardString += string
 }
-console.log(cardString);
+
+// console.log(cardString);
+cardsJs.innerHTML = cardString
+
 
