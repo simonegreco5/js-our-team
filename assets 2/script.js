@@ -1,3 +1,4 @@
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +37,40 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+// sezione DOM - selezione nodi del dom 
+const cardsJs = document.getElementById('cards')
+
+let cardString = ''
+
+// sezione FOR - cicliamo l'array teamMembers
+for (let i = 0; i < teamMembers.length; i++){
+
+  const member = teamMembers[i] // objects {}
+  const {name, role, email, img} = member
+
+  const string = `
+
+   <div class="col bg-dark" id="card">
+      <!-- immagine -->
+      <div class="" id="img">
+        <img src="${img}" alt="${name}">
+      </div>
+
+      <!-- nome -->
+      <div class="" id="name">
+        <strong>${name}</strong>
+      </div>
+
+      <!-- ruolo -->
+      <div class="" id="role">${role}</div>
+
+      <!-- email -->
+      <div class="" id="email">${email}</div>
+    </div>
+
+  `
+  cardString += string
+}
+console.log(cardString);
+
